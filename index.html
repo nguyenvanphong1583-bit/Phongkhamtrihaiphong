@@ -2,28 +2,55 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Chat trực tiếp với chúng tôi</title>
+  <title>PHÒNG KHÁM NGOẠI 15 HẢI PHÒNG</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
-      margin: 40px;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      background: #0068ff;
+      color: white;
+      padding: 20px;
+    }
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
     h2 {
-      color: #333;
+      color: #0068ff;
     }
     .form-box {
-      margin-bottom: 20px;
+      margin: 20px 0;
+      text-align: center;
     }
-    input[type="text"] {
+    input[type="text"], input[type="date"], input[type="time"] {
       padding: 10px;
       width: 250px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      margin: 5px;
     }
     button {
       padding: 10px 15px;
-      margin-left: 10px;
       border: none;
       border-radius: 5px;
       background: #0078d7;
@@ -41,6 +68,7 @@
       width: 400px;
       height: 500px;
       padding: 10px;
+      margin: 20px auto;
     }
     #messages {
       height: 400px;
@@ -58,27 +86,81 @@
     .server {
       color: green;
     }
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <h2>Nhập số điện thoại để bắt đầu chat</h2>
-  <div class="form-box">
-    <input type="text" id="phone" placeholder="Nhập số điện thoại của bạn">
-    <button onclick="startChat()">Xác nhận</button>
-  </div>
+  <header>
+    <h1>PHÒNG KHÁM NGOẠI 15 HẢI PHÒNG</h1>
+    <h2>CHUYÊN CHỮA TRĨ</h2>
+  </header>
 
-  <div id="chatBox">
-    <h3>Chat với số 0975371026</h3>
-    <div id="messages"></div>
-    <input type="text" id="msg" placeholder="Nhập tin nhắn">
-    <button onclick="sendMsg()">Gửi</button>
-  </div>
+  <nav>
+    <a href="#gioithieu">Giới thiệu</a>
+    <a href="#noidung">Nội dung</a>
+    <a href="#tuvan">Tư vấn</a>
+    <a href="#datlich">Đặt lịch</a>
+  </nav>
+
+  <section id="gioithieu">
+    <h2>Giới thiệu</h2>
+    <p>Phòng khám Ngoại 15 Hải Phòng chuyên điều trị bệnh trĩ bằng các phương pháp hiện đại, an toàn và hiệu quả. Đội ngũ bác sĩ giàu kinh nghiệm, tận tâm với bệnh nhân.</p>
+    <p><b>Địa chỉ:</b> Số 83 Lũng Đông, Hải An, Hải Phòng</p>
+    <p><b>Điện thoại liên hệ:</b> 0975371026</p>
+    <p><b>Giờ làm việc:</b> 8h00 - 20h00 (Thứ 2 đến Chủ nhật)</p>
+  </section>
+
+  <section id="noidung">
+    <h2>Nội dung</h2>
+    <p>Phòng khám cung cấp dịch vụ khám và điều trị bệnh trĩ nội, trĩ ngoại, trĩ hỗn hợp. Sử dụng công nghệ tiên tiến, giảm đau, phục hồi nhanh chóng.</p>
+  </section>
+
+  <section id="tuvan">
+    <h2>Tư vấn</h2>
+    <div class="form-box">
+      <input type="text" id="phone" placeholder="Nhập số điện thoại của bạn">
+      <button onclick="startChat()">Bắt đầu chat tư vấn</button>
+    </div>
+
+    <div id="chatBox">
+      <h3>Chat với Phòng khám (0975371026)</h3>
+      <div id="messages"></div>
+      <input type="text" id="msg" placeholder="Nhập tin nhắn">
+      <button onclick="sendMsg()">Gửi</button>
+    </div>
+  </section>
+
+  <section id="datlich">
+    <h2>Đặt lịch khám</h2>
+    <div class="form-box">
+      <input type="text" id="name" placeholder="Họ và tên">
+      <input type="text" id="phoneBooking" placeholder="Số điện thoại">
+      <input type="date" id="date">
+      <input type="time" id="time">
+      <button onclick="bookAppointment()">Đặt lịch</button>
+    </div>
+    <p id="bookingResult" style="text-align:center; color:green;"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Phòng khám Ngoại 15 Hải Phòng - Chuyên chữa trĩ</p>
+  </footer>
 
   <script>
+    let customerPhone = "";
+
     function startChat() {
-      let phone = document.getElementById('phone').value.trim();
-      if(phone.length >= 9) {
+      customerPhone = document.getElementById('phone').value.trim();
+      if(customerPhone.length >= 9) {
         document.getElementById('chatBox').style.display = 'block';
+        let messages = document.getElementById('messages');
+        messages.innerHTML += "<p class='msg server'><b>Phòng khám:</b> Xin chào, số của bạn là " + customerPhone + ". Bạn cần tư vấn gì về bệnh trĩ?</p>";
       } else {
         alert("Vui lòng nhập số điện thoại hợp lệ!");
       }
@@ -88,145 +170,30 @@
       let msg = document.getElementById('msg').value.trim();
       if(msg !== "") {
         let messages = document.getElementById('messages');
-        messages.innerHTML += "<p class='msg user'><b>Bạn:</b> " + msg + "</p>";
+        messages.innerHTML += "<p class='msg user'><b>Bạn ("+customerPhone+"):</b> " + msg + "</p>";
         document.getElementById('msg').value = "";
 
-        // Giả lập phản hồi từ server/số 0975371026
+        // Giả lập phản hồi từ phòng khám
         setTimeout(() => {
-          messages.innerHTML += "<p class='msg server'><b>0975371026:</b> Cảm ơn bạn đã nhắn tin, chúng tôi sẽ phản hồi sớm!</p>";
+          messages.innerHTML += "<p class='msg server'><b>Phòng khám (0975371026):</b> Cảm ơn bạn, chúng tôi sẽ tư vấn chi tiết về chữa trĩ ngay!</p>";
           messages.scrollTop = messages.scrollHeight;
         }, 1000);
+      }
+    }
+
+    function bookAppointment() {
+      let name = document.getElementById('name').value.trim();
+      let phone = document.getElementById('phoneBooking').value.trim();
+      let date = document.getElementById('date').value;
+      let time = document.getElementById('time').value;
+
+      if(name && phone && date && time) {
+        document.getElementById('bookingResult').innerText = 
+          "Cảm ơn " + name + "! Bạn đã đặt lịch khám vào " + date + " lúc " + time + ". Chúng tôi sẽ liên hệ qua số " + phone + ".";
+      } else {
+        alert("Vui lòng nhập đầy đủ thông tin để đặt lịch!");
       }
     }
   </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Thông tin phòng khám trĩ uy tín tại Hải phòng, dịch vụ khám chữa bệnh chuyên nghiệp. ">
-  <title>PHÒNG KHÁM NGOẠI KHOA 15 CHUYÊN ĐIỀU TRỊ TRĨ ( SÓNG CAO TẦN RFA- TIÊM TRIỆT MẠCH- CẮT )-Chính thức</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #f5f9ff;
-      color: #333;
-    }
-    header {
-      background-color: #0077b6;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #0096c7;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 20px;
-    }
-    .services {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .service-box {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      flex: 1;
-      min-width: 250px;
-    }
-    footer {
-      background-color: #0077b6;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #0096c7;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Phòng Khám Trĩ - 83 Lũng Đông</h1>
-    <p>Chăm sóc sức khỏe hậu môn - trực tràng tận tâm và chuyên nghiệp</p>
-  </header>
-
-  <nav>
-    <a href="#gioithieu">Giới thiệu</a>
-    <a href="#dichvu">Dịch vụ</a>
-    <a href="#datlich">Đặt lịch hẹn</a>
-    <a href="#lienhe">Liên hệ</a>
-  </nav>
-
-  <section id="gioithieu">
-    <h2>Giới thiệu</h2>
-    <p>Phòng khám Trĩ tại 83 Lũng Đông, Hải An, Hải Phòng với đội ngũ bác sĩ giàu kinh nghiệm,máy móc điều trị trĩ hiện đại nhất trên thế giới.Bệnh nhân sau khi can thiệp có thể về ngay trong ngày.</p>
-  </section>
-
-  <section id="dichvu">
-    <h2>Dịch vụ</h2>
-    <div class="services">
-      <div class="service-box">
-        <h3>Khám & Chẩn đoán</h3>
-        <p>Khám tổng quát, nội soi hậu môn - trực tràng.</p>
-      </div>
-      <div class="service-box">
-        <h3>Điều trị</h3>
-        <p>Điều trị nội khoa, ngoại khoa, thủ thuật ít xâm lấn.</p>
-      </div>
-      <div class="service-box">
-        <h3>Tư vấn</h3>
-        <p>Hướng dẫn chế độ ăn uống, sinh hoạt phòng ngừa bệnh trĩ.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="datlich">
-    <h2>Đặt lịch hẹn</h2>
-    <form>
-      <label>Họ tên:</label><br>
-      <input type="text" name="name" required><br><br>
-      <label>Số điện thoại:</label><br>
-      <input type="tel" name="phone" required><br><br>
-      <label>Ngày hẹn:</label><br>
-      <input type="date" name="date" required><br><br>
-      <button type="submit" class="btn">Gửi yêu cầu</button>
-    </form>
-  </section>
-
-  <section id="lienhe">
-    <h2>Liên hệ</h2>
-    <p>📍 Địa chỉ: 83 Lũng Đông, Hải An, Hải Phòng</p>
-    <p>📞 Hotline: 0818655668 or 0975371026</p>
-    <p>✉️ Email: phongkhamtrihaiphong@gmail.com</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Phòng Khám Trĩ - 83 Lũng Đông, Hải An, Hải Phòng</p>
-  </footer>
-</body>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.5005742534875!2d106.72647923079323!3d20.8316600975861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a65007f3d9f29%3A0xaa031a9364bf5572!2zUGjDsm5nIGtow6FtIFRyxKkgdOG6oWkgSOG6o2kgcGjDsm5n!5e0!3m2!1svi!2s!4v1770022407249!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</html>
-
-
-
