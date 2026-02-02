@@ -2,8 +2,111 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <title>Chat trực tiếp với chúng tôi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 40px;
+    }
+    h2 {
+      color: #333;
+    }
+    .form-box {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #0078d7;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    #chatBox {
+      display: none;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: white;
+      width: 400px;
+      height: 500px;
+      padding: 10px;
+    }
+    #messages {
+      height: 400px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .msg {
+      margin: 5px 0;
+    }
+    .user {
+      color: blue;
+    }
+    .server {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Nhập số điện thoại để bắt đầu chat</h2>
+  <div class="form-box">
+    <input type="text" id="phone" placeholder="Nhập số điện thoại của bạn">
+    <button onclick="startChat()">Xác nhận</button>
+  </div>
+
+  <div id="chatBox">
+    <h3>Chat với số 0975371026</h3>
+    <div id="messages"></div>
+    <input type="text" id="msg" placeholder="Nhập tin nhắn">
+    <button onclick="sendMsg()">Gửi</button>
+  </div>
+
+  <script>
+    function startChat() {
+      let phone = document.getElementById('phone').value.trim();
+      if(phone.length >= 9) {
+        document.getElementById('chatBox').style.display = 'block';
+      } else {
+        alert("Vui lòng nhập số điện thoại hợp lệ!");
+      }
+    }
+
+    function sendMsg() {
+      let msg = document.getElementById('msg').value.trim();
+      if(msg !== "") {
+        let messages = document.getElementById('messages');
+        messages.innerHTML += "<p class='msg user'><b>Bạn:</b> " + msg + "</p>";
+        document.getElementById('msg').value = "";
+
+        // Giả lập phản hồi từ server/số 0975371026
+        setTimeout(() => {
+          messages.innerHTML += "<p class='msg server'><b>0975371026:</b> Cảm ơn bạn đã nhắn tin, chúng tôi sẽ phản hồi sớm!</p>";
+          messages.scrollTop = messages.scrollHeight;
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
   <meta name="description" content="Thông tin phòng khám trĩ uy tín tại Hải phòng, dịch vụ khám chữa bệnh chuyên nghiệp. ">
-  <title>Phòng Khám Trĩ - 83 Lũng Đông-Chính thức</title>
+  <title>PHÒNG KHÁM NGOẠI KHOA 15 CHUYÊN ĐIỀU TRỊ TRĨ ( SÓNG CAO TẦN RFA- TIÊM TRIỆT MẠCH- CẮT )-Chính thức</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -77,7 +180,7 @@
 
   <section id="gioithieu">
     <h2>Giới thiệu</h2>
-    <p>Phòng khám Trĩ tại 83 Lũng Đông, Hải An, Hải Phòng với đội ngũ bác sĩ giàu kinh nghiệm, cơ sở vật chất hiện đại, cam kết mang đến sự chăm sóc tận tình và bảo mật thông tin cho bệnh nhân.</p>
+    <p>Phòng khám Trĩ tại 83 Lũng Đông, Hải An, Hải Phòng với đội ngũ bác sĩ giàu kinh nghiệm,máy móc điều trị trĩ hiện đại nhất trên thế giới.Bệnh nhân sau khi can thiệp có thể về ngay trong ngày.</p>
   </section>
 
   <section id="dichvu">
@@ -122,7 +225,8 @@
     <p>&copy; 2026 Phòng Khám Trĩ - 83 Lũng Đông, Hải An, Hải Phòng</p>
   </footer>
 </body>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.5005742534875!2d106.72647923079323!3d20.8316600975861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a65007f3d9f29%3A0xaa031a9364bf5572!2zUGjDsm5nIGtow6FtIFRyxKkgdOG6oWkgSOG6o2kgcGjDsm5n!5e0!3m2!1svi!2s!4v1770022407249!5m2!1svi!2s" width="500px" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.5005742534875!2d106.72647923079323!3d20.8316600975861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a65007f3d9f29%3A0xaa031a9364bf5572!2zUGjDsm5nIGtow6FtIFRyxKkgdOG6oWkgSOG6o2kgcGjDsm5n!5e0!3m2!1svi!2s!4v1770022407249!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </html>
+
 
 
