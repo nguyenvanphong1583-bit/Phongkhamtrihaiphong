@@ -18,16 +18,16 @@
 
   <style>
     body {font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6;}
-    header {background:#228B22; color:#fff; padding:20px; text-align:center;} /* xanh lá cây */
-    nav {background:#228B22; padding:10px;} /* xanh lá cây */
+    header {background:#228B22; color:#fff; padding:20px; text-align:center;}
+    nav {background:#228B22; padding:10px;}
     nav a {color:#fff; margin:0 15px; text-decoration:none;}
     nav a:hover {text-decoration:underline;}
     section {padding:20px;}
     .services {display:flex; flex-wrap:wrap; gap:20px;}
     .service {flex:1; min-width:250px; background:#f2f2f2; padding:15px; border-radius:8px;}
     footer {background:#228B22; color:#fff; text-align:center; padding:15px;}
-    .chat-buttons {position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px;}
-    .chat-buttons a {display:block; padding:10px 15px; border-radius:5px; color:#fff; text-align:center; font-weight:bold;}
+    .chat-buttons {position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:10000;}
+    .chat-buttons a {display:block; padding:10px 15px; border-radius:5px; color:#fff; text-align:center; font-weight:bold; text-decoration:none;}
     .zalo {background:#0066cc;}
     .facebook {background:#3b5998;}
     .messengerquick {background:#0084ff;}
@@ -55,8 +55,6 @@
     <a href="#dichvu">Dịch vụ</a>
     <a href="#datlich">Đặt lịch hẹn</a>
     <a href="#lienhe">Liên hệ</a>
-    <a href="#gallery-dichvu">Ảnh dịch vụ</a>
-    <a href="#gallery-bacsi">Ảnh bác sĩ</a>
     <a href="#gallery-phongkham">Ảnh phòng khám</a>
   </nav>
 
@@ -76,7 +74,7 @@
 
   <section id="datlich">
     <h2>Đặt lịch hẹn trực tuyến</h2>
-    <form action="mailto:phongkhamtrihaiphong@gmail.com" method="post" enctype="text/plain">
+    <form action="mailto:phongkhamtrihairphong@gmail.com" method="post" enctype="text/plain">
       <label for="name">Họ và tên:</label>
       <input type="text" id="name" name="name" required>
       <label for="phone">Số điện thoại:</label>
@@ -101,8 +99,8 @@
     <p><strong>Điện thoại:</strong> <a href="tel:0818655668">0818 655 668</a></p>
     <p><strong>Zalo:</strong> <a href="https://zalo.me/0818655668" target="_blank">Chat qua Zalo</a></p>
     <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1GphfX6vRZ/" target="_blank">Trang Facebook Phòng khám</a></p>
-    <p><strong>Email:</strong> <a href="mailto:phongkhamtrihaiphong@gmail.com">phongkhamtrihaiphong@gmail.com</a></p>
+    <p><strong>Email:</strong> <a href="mailto:phongkhamtrihairphong@gmail.com">phongkhamtrihairphong@gmail.com</a></p>
     <p><strong>Giờ làm việc:</strong> 8h00 - 20h00 (Thứ 2 - Chủ Nhật)</p>
     <div class="map-container">
       <h3>Bản đồ</h3>
-      <iframe src="https://www.google.com/maps?q=83+Lũng+Đông,+Hải+An,+Hải+Phòng&output=embed" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps?q=83+Lũng+Đông,+Hải+An,+Hải+Phòng&output=embed" allow
