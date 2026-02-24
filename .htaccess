@@ -1,0 +1,13 @@
+# Bật Rewrite Engine
+RewriteEngine On
+
+# Ép tất cả về HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Ép bỏ www (chỉ dùng phongkhamtrihaiphong.vn)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+# Đặt file mặc định là index.html
+DirectoryIndex index.html
