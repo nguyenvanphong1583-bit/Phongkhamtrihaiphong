@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phòng Khám Ngoại Khoa 15 - Điều Trị Trĩ Hải Phòng | Máy Móc Hiện Đại, Chi Phí Rẻ</title>
   <meta name="description" content="Phòng Khám Ngoại Khoa 15 chuyên điều trị trĩ nội, ngoại, hỗn hợp, nứt kẽ hậu môn bằng RFA, Laser hiện đại. Bác sĩ uy tín, chi phí rẻ, cam kết khỏi bệnh. Địa chỉ: 83 Lũng Đông, Hải An, Hải Phòng.">
-  <meta name="keywords" content="phòng khám trĩ hải phòng, điều trị trĩ, RFA, laser, nứt kẽ hậu môn, bác sĩ hải phòng">
+  <meta name="keywords" content="phòng khám trĩ hải phòng, điều trị trĩ, RFA, laser, nứt kẽ hậu môn,đau hậu môn,đau khi đi vệ sinh,đau khi đi tiểu,đau vùng hậu môn,đau búi trĩ ,ngứa khi đi vệ sinh, ngứa buốt hậu môn,ngứa và chảy máu hậu môn, bác sĩ hải phòng">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -555,6 +555,21 @@
     .video-card iframe {
       border-radius: 10px 10px 0 0;
       display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .video-card iframe {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-card iframe {
+        height: 180px;
+      }
     }
 
     .video-info {
@@ -980,23 +995,23 @@
       
       <div class="video-grid">
         <div class="video-card">
-          <iframe width="100%" height="250" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Máy Móc Hiện Đại" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Máy Móc Hiện Đại" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="video-info">
-            <h4>Máy Móc Hiện Đại</h4>
-            <p>Trang bị công nghệ y tế tiên tiến nhất: RFA, Laser, Siêu âm</p>
+            <h4>⚡ Máy Móc Hiện Đại</h4>
+            <p>Trang bị công nghệ y tế tiên tiến nhất: RFA, Laser, Siêu âm, Nội soi</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe width="100%" height="250" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Chi Phí Rẻ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Chi Phí Rẻ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="video-info">
-            <h4>Chi Phí Rẻ</h4>
-            <p>Giá dịch vụ cạnh tranh, minh bạch, không phát sinh chi phí</p>
+            <h4>💰 Chi Phí Rẻ</h4>
+            <p>Giá dịch vụ cạnh tranh, minh bạch, không phát sinh chi phí phụ</p>
           </div>
         </div>
         <div class="video-card">
-          <iframe width="100%" height="250" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Cam Kết Khỏi Bệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Cam Kết Khỏi Bệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="video-info">
-            <h4>Cam Kết Khỏi Bệnh</h4>
+            <h4>✅ Cam Kết Khỏi Bệnh</h4>
             <p>Bác sĩ chuyên khoa cam kết kết quả, hỗ trợ sau điều trị</p>
           </div>
         </div>
@@ -1136,24 +1151,85 @@
   <script>
     // Search suggestions data
     const searchSuggestions = [
+      // Từ khóa chính
       { text: 'Phong kham tri', display: 'Phòng khám trĩ', icon: '🏥', section: 'services' },
       { text: 'Tri hai phong', display: 'Trĩ hải phòng', icon: '📍', section: 'services' },
       { text: 'Tri', display: 'Trĩ', icon: '🩺', section: 'services' },
+      { text: 'Dieu tri tri', display: 'Điều trị trĩ', icon: '💊', section: 'services' },
+      { text: 'Chua tri', display: 'Chữa trĩ', icon: '⚕️', section: 'services' },
+      
+      // Phương pháp điều trị
       { text: 'Tiem triet mach', display: 'Tiêm triệt mạch', icon: '💉', section: 'services' },
       { text: 'Song cao tan rfa', display: 'Sóng cao tần RFA', icon: '⚡', section: 'services' },
+      { text: 'Rfa tri', display: 'RFA chữa trĩ', icon: '⚡', section: 'services' },
+      { text: 'Dot tri laser', display: 'Đốt trĩ laser', icon: '🔴', section: 'services' },
+      { text: 'Laser chua tri', display: 'Laser chữa trĩ', icon: '🔴', section: 'services' },
+      { text: 'Phau thuat tri', display: 'Phẫu thuật trĩ', icon: '🔪', section: 'services' },
+      { text: 'Cat tri', display: 'Cắt trĩ', icon: '✂️', section: 'services' },
+      
+      // Loại trĩ
       { text: 'Tri do 1', display: 'Trĩ độ 1', icon: '📊', section: 'services' },
       { text: 'Tri do 2', display: 'Trĩ độ 2', icon: '📊', section: 'services' },
       { text: 'Tri do 3', display: 'Trĩ độ 3', icon: '📊', section: 'services' },
-      { text: '83 lung dong', display: '83 Lũng Đông', icon: '📍', section: 'contact' },
-      { text: 'Dot tri laser', display: 'Đốt trĩ laser', icon: '🔴', section: 'services' },
+      { text: 'Tri noi', display: 'Trĩ nội', icon: '🩺', section: 'services' },
+      { text: 'Tri ngoai', display: 'Trĩ ngoài', icon: '🩺', section: 'services' },
+      { text: 'Tri hon hop', display: 'Trĩ hỗn hợp', icon: '🩺', section: 'services' },
+      
+      // TRIỆU CHỨNG - CHẢY MÁU
+      { text: 'Chay mau khi di ve sinh', display: '🔴 Chảy máu khi đi vệ sinh', icon: '⚠️', section: 'services' },
+      { text: 'Chay mau hau mon', display: '🔴 Chảy máu hậu môn', icon: '⚠️', section: 'services' },
+      { text: 'Mau trong phan', display: '🔴 Máu trong phân', icon: '⚠️', section: 'services' },
+      { text: 'Phan co mau', display: '🔴 Phân có máu', icon: '⚠️', section: 'services' },
+      { text: 'Chay mau khi di tieu', display: '🔴 Chảy máu khi đi tiêu', icon: '⚠️', section: 'services' },
+      { text: 'Mau chay tu hau mon', display: '🔴 Máu chảy từ hậu môn', icon: '⚠️', section: 'services' },
+      
+      // TRIỆU CHỨNG - ĐAU
+      { text: 'Dau hau mon', display: '🔴 Đau hậu môn', icon: '😣', section: 'services' },
+      { text: 'Dau khi di ve sinh', display: '🔴 Đau khi đi vệ sinh', icon: '😣', section: 'services' },
+      { text: 'Dau khi di tieu', display: '🔴 Đau khi đi tiêu', icon: '😣', section: 'services' },
+      { text: 'Dau vung hau mon', display: '🔴 Đau vùng hậu môn', icon: '😣', section: 'services' },
+      { text: 'Dau bui tri', display: '🔴 Đau búi trĩ', icon: '😣', section: 'services' },
+      { text: 'Dau khi ngoi', display: '🔴 Đau khi ngồi', icon: '😣', section: 'services' },
+      { text: 'Dau khi dung lau', display: '🔴 Đau khi đứng lâu', icon: '😣', section: 'services' },
+      
+      // TRIỆU CHỨNG - NGỨA
+      { text: 'Ngua hau mon', display: '🔴 Ngứa hậu môn', icon: '🤔', section: 'services' },
+      { text: 'Ngua vung hau mon', display: '🔴 Ngứa vùng hậu môn', icon: '🤔', section: 'services' },
+      { text: 'Ngua khi di ve sinh', display: '🔴 Ngứa khi đi vệ sinh', icon: '🤔', section: 'services' },
+      { text: 'Ngua buot hau mon', display: '🔴 Ngứa buốt hậu môn', icon: '🤔', section: 'services' },
+      { text: 'Ngua va chay mau hau mon', display: '🔴 Ngứa và chảy máu hậu môn', icon: '🤔', section: 'services' },
+      
+      // TRIỆU CHỨNG - SƯ/BÚI
+      { text: 'Bui tri ngoai', display: '🔴 Búi trĩ ngoài', icon: '💢', section: 'services' },
+      { text: 'Sung hau mon', display: '🔴 Sưng hậu môn', icon: '💢', section: 'services' },
+      { text: 'Sung vung hau mon', display: '🔴 Sưng vùng hậu môn', icon: '💢', section: 'services' },
+      { text: 'Bui tri sung', display: '🔴 Búi trĩ sưng', icon: '💢', section: 'services' },
+      { text: 'Tri ngoai sung', display: '🔴 Trĩ ngoài sưng', icon: '💢', section: 'services' },
+      
+      // TRIỆU CHỨNG - KHÁC
+      { text: 'Cam giac kho chiu hau mon', display: '🔴 Cảm giác khó chịu hậu môn', icon: '😞', section: 'services' },
+      { text: 'Cam giac nong hau mon', display: '🔴 Cảm giác nóng hậu môn', icon: '🔥', section: 'services' },
+      { text: 'Chung tri', display: 'Chứng trĩ', icon: '🩺', section: 'services' },
+      { text: 'Trieu chung tri', display: 'Triệu chứng trĩ', icon: '📋', section: 'services' },
+      
+      // Bệnh liên quan
       { text: 'Nut ke hau mon', display: 'Nứt kẽ hậu môn', icon: '🩹', section: 'services' },
       { text: 'Hep hau mon', display: 'Hẹp hậu môn', icon: '🔧', section: 'services' },
       { text: 'Ro hau mon', display: 'Rò hậu môn', icon: '🔧', section: 'services' },
+      
+      // Địa chỉ & Liên hệ
+      { text: '83 lung dong', display: '83 Lũng Đông', icon: '📍', section: 'contact' },
       { text: 'Bac si hai phong', display: 'Bác sĩ hải phòng', icon: '👨‍⚕️', section: 'services' },
-      { text: 'Dieu tri tri', display: 'Điều trị trĩ', icon: '💊', section: 'services' },
       { text: 'Dat lich kham', display: 'Đặt lịch khám', icon: '📅', section: 'booking' },
       { text: 'Gia kham', display: 'Giá khám', icon: '💰', section: 'highlights' },
-      { text: 'Lien he', display: 'Liên hệ', icon: '📞', section: 'contact' }
+      { text: 'Lien he', display: 'Liên hệ', icon: '📞', section: 'contact' },
+      
+      // Câu hỏi
+      { text: 'Benh tri co nguy hiem khong', display: '❓ Bệnh trĩ có nguy hiểm không?', icon: '❓', section: 'services' },
+      { text: 'Tri co tu khoi khong', display: '❓ Trĩ có tự khỏi không?', icon: '❓', section: 'services' },
+      { text: 'Lam sao de chua tri', display: '❓ Làm sao để chữa trĩ?', icon: '❓', section: 'services' },
+      { text: 'Nguyen nhan benh tri', display: '❓ Nguyên nhân bệnh trĩ', icon: '❓', section: 'services' },
+      { text: 'Cach phong chong tri', display: '❓ Cách phòng chống trĩ', icon: '❓', section: 'services' }
     ];
 
     // Remove diacritics function
