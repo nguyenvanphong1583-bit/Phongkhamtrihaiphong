@@ -6,7 +6,7 @@
   <title>Liên Hệ | Phòng Khám Ngoại Khoa 15 - Chuyên Điều Trị Trĩ Hải Phòng</title>
   <meta name="description" content="Liên hệ Phòng Khám Ngoại Khoa 15 tại Số 83 Lũng Đông, Hải An, Hải Phòng để được tư vấn điều trị trĩ miễn phí.">
   <style>
-    :root { --primary-color: #006400; --secondary-color: #228B22; --accent-color: #e63946; --text-light: #ffffff; --bg-light: #f4f4f4; }
+    :root { --primary-color: #006400; --secondary-color: #228B22; --accent-color: #e63946; --text-light: #ffffff; --bg-light: #f4f4f4; --zalo-color: #0068ff; --messenger-color: #0084ff; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; line-height: 1.6; color: #333; }
     header { display:flex; justify-content:space-between; align-items:center; padding:15px 5%; background: var(--primary-color); color: var(--text-light); }
     nav { background: var(--secondary-color); }
@@ -19,6 +19,20 @@
     .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-top: 30px; }
     footer { background: var(--primary-color); color: white; padding: 20px; text-align: center; margin-top: 40px; }
     .btn-back { display: inline-block; margin-top: 20px; color: var(--secondary-color); text-decoration: none; font-weight: bold; }
+
+    /* Nút Liên Hệ Nổi - HOÀN HẢO */
+    .floating-contact { position: fixed; bottom: 30px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+    .float-btn { position: relative; display: flex; align-items: center; justify-content: flex-end; text-decoration: none; transition: all 0.3s ease; }
+    .float-btn .btn-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; z-index: 2; transition: transform 0.3s; background: white; padding: 5px; box-sizing: border-box; }
+    .float-btn .btn-icon img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
+    .float-btn .btn-icon::before, .float-btn .btn-icon::after { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; top: 0; left: 0; z-index: -1; }
+    .btn-zalo .btn-icon::before { background: var(--zalo-color); animation: ripple 2s infinite; }
+    .btn-zalo .btn-icon::after { background: var(--zalo-color); animation: ripple 2s infinite 1s; }
+    .btn-phone .btn-icon { background: var(--accent-color); }
+    .btn-phone .btn-icon::before { background: var(--accent-color); animation: ripple 2s infinite; }
+    .btn-phone .btn-icon::after { background: var(--accent-color); animation: ripple 2s infinite 1s; }
+    @keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
+    @media (max-width: 768px) { .float-btn .btn-icon { width: 50px; height: 50px; } }
   </style>
 </head>
 <body>
@@ -60,12 +74,25 @@
     </div>
     <h2>Vị Trí Trên Bản Đồ</h2>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.61864147326!2d106.7118!3d20.8424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a7af497177777%3A0x7777777777777777!2zODMgTMWpbmcgxJD么W5nLCBI4bqjaSBBbiwgSOG6o2kgUGjDsm5n!5e0!3m2!1svi!2svn!4v1700000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.001148447197!2d106.72481657934571!3d20.8316601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a65007f3d9f29%3A0xaa031a9364bf5572!2zUGjDsm5nIGtow6FtIFRyxKkgdOG6oWkgSOG6o2kgcGjDsm5n!5e0!3m2!1sen!2ssg!4v1775638421423!5m2!1sen!2ssg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <a href="index.html" class="btn-back">← Quay lại trang chủ</a>
   </div>
   <footer>
     <p>&copy; 2026 Phòng khám Ngoại khoa 15 - phongkhamtrihaiphong.vn</p>
   </footer>
+
+  <div class="floating-contact">
+    <a href="https://zalo.me/0908966895" class="float-btn btn-zalo" target="_blank">
+      <div class="btn-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Zalo_logo.png" alt="Zalo">
+      </div>
+    </a>
+    <a href="tel:081655668" class="float-btn btn-phone">
+      <div class="btn-icon">
+        <span style="color: white; font-size: 30px;">📞</span>
+      </div>
+    </a>
+  </div>
 </body>
 </html>

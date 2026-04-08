@@ -6,7 +6,7 @@
   <title>Giới Thiệu | Phòng Khám Ngoại Khoa 15 - Bác Sĩ Nguyễn Hải Bình</title>
   <meta name="description" content="Tìm hiểu về Phòng Khám Ngoại Khoa 15 và Bác sĩ Nguyễn Hải Bình - Chuyên gia điều trị trĩ uy tín tại Hải Phòng.">
   <style>
-    :root { --primary-color: #006400; --secondary-color: #228B22; --accent-color: #e63946; --text-light: #ffffff; --bg-light: #f4f4f4; }
+    :root { --primary-color: #006400; --secondary-color: #228B22; --accent-color: #e63946; --text-light: #ffffff; --bg-light: #f4f4f4; --zalo-color: #0068ff; --messenger-color: #0084ff; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; line-height: 1.6; color: #333; }
     header { display:flex; justify-content:space-between; align-items:center; padding:15px 5%; background: var(--primary-color); color: var(--text-light); }
     nav { background: var(--secondary-color); }
@@ -19,6 +19,20 @@
     .profile-info { flex: 1; min-width: 300px; }
     footer { background: var(--primary-color); color: white; padding: 20px; text-align: center; margin-top: 40px; }
     .btn-back { display: inline-block; margin-top: 20px; color: var(--secondary-color); text-decoration: none; font-weight: bold; }
+
+    /* Nút Liên Hệ Nổi - SIÊU HOÀN HẢO */
+    .floating-contact { position: fixed; bottom: 30px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+    .float-btn { position: relative; display: flex; align-items: center; justify-content: flex-end; text-decoration: none; transition: all 0.3s ease; }
+    .float-btn .btn-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; z-index: 2; transition: transform 0.3s; background: white; padding: 5px; box-sizing: border-box; }
+    .float-btn .btn-icon img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
+    .float-btn .btn-icon::before, .float-btn .btn-icon::after { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; top: 0; left: 0; z-index: -1; }
+    .btn-zalo .btn-icon::before { background: var(--zalo-color); animation: ripple 2s infinite; }
+    .btn-zalo .btn-icon::after { background: var(--zalo-color); animation: ripple 2s infinite 1s; }
+    .btn-phone .btn-icon { background: var(--accent-color); }
+    .btn-phone .btn-icon::before { background: var(--accent-color); animation: ripple 2s infinite; }
+    .btn-phone .btn-icon::after { background: var(--accent-color); animation: ripple 2s infinite 1s; }
+    @keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
+    @media (max-width: 768px) { .float-btn .btn-icon { width: 50px; height: 50px; } }
   </style>
 </head>
 <body>
@@ -49,18 +63,23 @@
     </div>
     <h2>Tầm Nhìn & Sứ Mệnh</h2>
     <p>Chúng tôi cam kết mang lại môi trường điều trị chuyên nghiệp, kín đáo và tận tâm. Sứ mệnh của chúng tôi là giúp bệnh nhân điều trị trĩ mà không cần phẫu thuật đau đớn, không cần nằm viện dài ngày, giúp bạn sớm trở lại cuộc sống bình thường.</p>
-    <h2>Tại Sao Chọn Chúng Tôi?</h2>
-    <ul>
-      <li>Đội ngũ bác sĩ chuyên khoa giàu kinh nghiệm.</li>
-      <li>Trang thiết bị hiện đại: Sóng cao tần RFA, Laser, Tiêm triệt mạch.</li>
-      <li>Quy trình điều trị nhanh chóng, an toàn, không đau.</li>
-      <li>Chi phí minh bạch, hợp lý.</li>
-      <li>Địa chỉ thuận tiện: Số 83 Lũng Đông, Hải An, Hải Phòng.</li>
-    </ul>
     <a href="index.html" class="btn-back">← Quay lại trang chủ</a>
   </div>
   <footer>
     <p>&copy; 2026 Phòng khám Ngoại khoa 15 - phongkhamtrihaiphong.vn</p>
   </footer>
+
+  <div class="floating-contact">
+    <a href="https://zalo.me/0908966895" class="float-btn btn-zalo" target="_blank">
+      <div class="btn-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Zalo_logo.png" alt="Zalo">
+      </div>
+    </a>
+    <a href="tel:081655668" class="float-btn btn-phone">
+      <div class="btn-icon">
+        <span style="color: white; font-size: 30px;">📞</span>
+      </div>
+    </a>
+  </div>
 </body>
 </html>
