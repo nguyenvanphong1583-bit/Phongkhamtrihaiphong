@@ -84,7 +84,7 @@ class MedicalChatbot {
         </div>
       </div>
       <button id="chatbot-toggle" class="chatbot-toggle">
-        💬
+        Hỏi Bác Sĩ AI
       </button>
     `;
 
