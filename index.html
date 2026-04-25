@@ -10,38 +10,6 @@
   <meta name="keywords" content="chữa trĩ hải phòng, phòng khám trĩ hải phòng, bác sĩ chữa trĩ giỏi hải phòng, địa chỉ chữa trĩ uy tín hải phòng, cắt trĩ hải phòng, tiêm triệt mạch trĩ, sóng cao tần rfa trĩ, đốt trĩ laser, trĩ nội trĩ ngoại, 83 lũng đông hải phòng, phòng khám ngoại khoa 15, phongkhamtrihaiphong.vn">
   <link rel="canonical" href="https://phongkhamtrihaiphong.vn/">
 
-  <!-- COZE AI CHATBOX INTEGRATION - ĐƯA LÊN ĐẦU ĐỂ TẢI TRƯỚC -->
-  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/oversea/index.js"></script>
-  <script>
-    new CozeWebSDK.WebChatClient({
-      config: {
-        type: 'app',
-        appInfo: {
-          appId: '7631381797472862213',
-          workflowId: ''
-        }
-      },
-      auth: {
-        type: 'token',
-        token: 'pat_urkQQrtjURZEArdJpNklZUkJnbRuOdThXpWELXCeQcpAQ6PJKRR1Yck9gWOJ58Xf',
-        onRefreshToken: function () {
-          return 'pat_urkQQrtjURZEArdJpNklZUkJnbRuOdThXpWELXCeQcpAQ6PJKRR1Yck9gWOJ58Xf';
-        }
-      }
-    });
-  </script>
-  
-  <style>
-    /* Đảm bảo Chatbox của Coze không bị che khuất */
-    #coze-web-chat-container {
-      z-index: 100000 !important;
-    }
-    .coze-web-chat-trigger {
-      bottom: 20px !important;
-      left: 20px !important; /* Đặt bên trái để không trùng với Zalo/Messenger bên phải */
-    }
-  </style>
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://phongkhamtrihaiphong.vn/">
@@ -352,6 +320,27 @@
     }
     function sendToZalo() { const info = getBookingInfo(); if (info) { window.open(`https://zalo.me/0908966895?text=${encodeURIComponent(info)}`, '_blank'); } }
     function sendToMessenger() { const info = getBookingInfo(); if (info) { window.open(`https://m.me/PKTriHaiPhong`, '_blank'); alert('Đã mở Messenger. Vui lòng gửi tin nhắn cho phòng khám để bác sĩ tư vấn!'); } }
+  </script>
+
+  <!-- COZE AI CHATBOX INTEGRATION - ĐẶT CUỐI BODY ĐỂ KHÔNG CHẶN TRANG -->
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/oversea/index.js"></script>
+  <script>
+    new CozeWebSDK.WebChatClient({
+      config: {
+        type: 'app',
+        appInfo: {
+          appId: '7631381797472862213',
+          workflowId: ''
+        }
+      },
+      auth: {
+        type: 'token',
+        token: 'pat_urkQQrtjURZEArdJpNklZUkJnbRuOdThXpWELXCeQcpAQ6PJKRR1Yck9gWOJ58Xf',
+        onRefreshToken: function () {
+          return 'pat_urkQQrtjURZEArdJpNklZUkJnbRuOdThXpWELXCeQcpAQ6PJKRR1Yck9gWOJ58Xf';
+        }
+      }
+    });
   </script>
 
 </body>
