@@ -143,12 +143,24 @@
     .btn-phone .btn-icon::after { background: var(--accent-color); animation: ripple 2s infinite 1s; }
     @keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
 
+    /* CSS cho Coze Chatbot - Định vị góc dưới bên trái */
+    .coze-chatbot-container {
+      position: fixed;
+      bottom: 30px;
+      left: 20px;
+      z-index: 9998;
+    }
+
     @media (max-width: 768px) {
       header { flex-direction: column; text-align: center; gap: 10px; }
       nav ul { gap: 10px; }
       .video-grid { grid-template-columns: 1fr; }
       .float-btn .btn-label { display: none; }
       .float-btn .btn-icon { width: 50px; height: 50px; }
+      .coze-chatbot-container {
+        bottom: 20px;
+        left: 10px;
+      }
     }
   </style>
 </head>
@@ -323,24 +335,24 @@
   </script>
 
   <!-- COZE AI CHATBOX INTEGRATION - ĐẶT CUỐI BODY ĐỂ KHÔNG CHẶN TRANG -->
+  <div class="coze-chatbot-container"></div>
   <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/oversea/index.js"></script>
   <script>
-    new CozeWebSDK.WebChatClient({
-      config: {
-        type: 'app',
-        appInfo: {
-          appId: '7631381797472862213',
-          workflowId: ''
+    // Khởi tạo Coze WebChat Client với cấu hình đúng
+    if (typeof CozeWebSDK !== 'undefined') {
+      new CozeWebSDK.WebChatClient({
+        config: {
+          botId: '7631381797472862213'
+        },
+        componentProps: {
+          title: '💬 Bác sĩ Tư Vấn AI',
+          subtitle: 'Hỏi đáp về bệnh trĩ & điều trị',
+          placeholder: 'Nhập câu hỏi của bạn...',
+          showRemainingUseCount: false,
+          allowUploadFile: false
         }
-      },
-      auth: {
-        type: 'token',
-        token: 'pat_urkQQrtjURZEArdJpNklZUkJnbRuOdThXpWELXCeQcpAQ6PJKRR1Yck9gWOJ58Xf',
-        onRefreshToken: function () {
-          return 'pat_urkQQrtjURZEArdJpNklZUkJnbRuOdThXpWELXCeQcpAQ6PJKRR1Yck9gWOJ58Xf';
-        }
-      }
-    });
+      });
+    }
   </script>
 
 </body>
